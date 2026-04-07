@@ -11,7 +11,7 @@
     <input id="firstname" name="first" value="ทดสอบ">
     <div>
         <h1>สิ่งที่สนใจ</h1>
-        <div id="NewContent">
+        <div id="Newcontent">
             <!--เเสดงสิ่งที่น่าสนใจ-->
 
         </div>
@@ -23,7 +23,7 @@
 
     </div>
     <div>
-        <button onclick="submitInterest()">สิ่งที่สนใจ</button>
+        <button onclick ='submitInterest()'>สิ่งที่สนใจ</button>
     </div>
     
     <div>
@@ -40,6 +40,8 @@
     </div>
     
     <div id="mycontent">HTML new</div>
+
+    <a id="thislink" href="https://google.com" target="_blank" style="font-size: 50px;">นนท์ชวนเจือก</a>
 
     <script>
 
@@ -70,52 +72,50 @@
 
           function submitData(){
             console.log('ส่งข้อมูลเเล้ว')
+            btn.setAttribute('disabled','true')
           }; 
 
           function overItem(){
             console.log('วางเมาส์เเล้ว')
         };
            
-          const myname = document.getElementById('hellomyname');
-          console.log(myname);
-          console.log(myname.textContent);
-          console.log(myname.innerText);
-          console.log(myname.innerHTML);
+        const myname = document.getElementById('hellomyname');
+        console.log(myname);
+        console.log(myname.textContent);
+        console.log(myname.innerText);
+        console.log(myname.innerHTML);
 
-          let myhtml = '<ul>';
-              myhtml += '<li>' + firstnameDOM.value + '</li>';
-              myhtml += '</ul>'; 
+        let myhtml = '<ul>';
+            myhtml += '<li>' + firstnameDOM.value + '</li>';
+            myhtml += '</ul>'; 
           
-          console.log(document.getElementById('mycontent').innerHTML = myhtml);    
-          document.getElementById('mycontent').innerHTML = myhtml;
+        console.log(document.getElementById('mycontent').innerHTML = myhtml);    
+        document.getElementById('mycontent').innerHTML = myhtml;
     
-         let setCss=document.getElementById('myhello');
-         setCss.style.backgroundColor = 'blue';
-         setCss.style.color = 'yellow'
-         setCss.style.textContent = 'bold';
+        let setCss=document.getElementById('myhello');
+        setCss.style.backgroundColor = 'blue';
+        setCss.style.color = 'yellow'
+        setCss.style.textContent = 'bold';
     
         function submitInterest(){
-        let interestDom = document.querySelectorAll('input[neme = interest]');
+        let interestDom = document.querySelectorAll('input[name = interest]');
         let contentHTML = '<ul>';
         for(let i=0; i < interestDom.length; i++){
-            if(interestDom[1].checked){
-            console.log(interestDom[1].value);
-            contentHTML += '<li>' + interestDom[1].value + '</li>';
+            if(interestDom[i].checked){
+            console.log(interestDom[i].value);
+            contentHTML += '<li>' + interestDom[i].value + '</li>';
             }
         }
         contentHTML += '</ul>';
-        let contentDOM = document.getElementById('NewContent');
+        let contentDOM = document.getElementById('Newcontent');
         contentDOM.innerHTML = contentHTML;
-        }
-    
-    
+    }
+    let thislinkDOM = document.getElementById('thislink');
+    console.log(thislinkDOM.getAttribute('href'));
+    thislinkDOM.setAttribute('href','https://youtu.be/u9UfJZRQgXk?si=crRjlZWVQMhcT6k4');     
+     
     
     </script>
 
-
-
-    
-    
-    
 </body>
 </html>
